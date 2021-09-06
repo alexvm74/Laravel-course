@@ -8,9 +8,12 @@ class NewsController extends Controller
 {
     public function index()
     {
-        //dump($this->getNews());
-        //dd($this->getNews());
-        return view('news.index', [
+        return view('news.index');
+    }
+
+    public function categories()
+    {
+        return view('news.categories', [
             'categoryList' => $this->getCategories()
         ]);
     }
