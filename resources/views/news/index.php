@@ -1,6 +1,6 @@
-<?php foreach($newsList as $news): ?>
+<h2>World Job News categories:</h2>
+<?php foreach($categoryList as $category): ?>
 <div>
-    <h2><a href="<?=route('news.show', ['id'=> $news['id']])?>"><?=$news['title']?></a></h2>
-    <p><?=$news['description']?></p>
+    <h3><?=$category['id'].'. '?><a href="<?=route('news.news', ['id_category'=> $category['id']])?>"><?=$category['title']?></a></h3>
 </div><br>
 <?php endforeach; ?> 

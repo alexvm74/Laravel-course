@@ -11,14 +11,26 @@ class NewsController extends Controller
         //dump($this->getNews());
         //dd($this->getNews());
         return view('news.index', [
+            'categoryList' => $this->getCategories()
+        ]);
+    }
+
+    public function news(int $id_category)
+    {
+        //dump($this->getNews());
+        //dd($this->getNews());
+        return view('news.news', [
+            'id_category' => $id_category,
             'newsList' => $this->getNews()
         ]);
     }
 
-    public function show(int $id)
+    public function show(int $id_category, $id_news)
     {
         return view('news.show', [
-            'id' => $id
+            'id_category' => $id_category,
+            'id_news' => $id_news,
+            'newsList' => $this->getNews()
         ]);
     }
 }
