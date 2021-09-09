@@ -16,7 +16,7 @@ class Controller extends BaseController
     {
         $faker = Factory::create('ru_RU');
         $data = [];
-        $countNumber = mt_rand(5, 10);
+        $countNumber = mt_rand(6, 12);
         for ($i = 0; $i < $countNumber; $i++) {
             $data[] = [
                 'id' => $i + 1,
@@ -25,7 +25,6 @@ class Controller extends BaseController
             ];
         }
         return $data;
-
     }
 
     protected function getNews(): array
