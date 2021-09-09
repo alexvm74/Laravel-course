@@ -1,11 +1,15 @@
 @extends('layouts.admin')
 
+@section('title')
+    @parent Список категорий
+@endsection
+
 @section('pageName')
-    @parent Category news
+    @parent Список категорий
 @endsection
 
 @section('addData')
-    @parent Category
+    @parent категорию
 @endsection
 
 @section('content')
@@ -16,21 +20,18 @@
                 <thead>
                     <tr>
                         <th>#ID</th>
-                        <th>Category</th>
-                        <th>Created</th>
-                        <th>Control</th>
+                        <th>Заголовок</th>
+                        <th>Дата добавления</th>
+                        <th>Управление</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     @forelse($categoryList as $category)
                         <tr>
                             <td>{{ $category['id'] }}</td>
                             <td><a href="{{ route('admin.news.index') }}">{{ $category['title'] }}</a></td>
                             <td>{{ $category['created_at'] }}</td>
-                            <td>
-                                <a href="">Edit</a>&nbsp;/&nbsp;<a href="">Delete</a>
-                            </td>
+                            <td><a href="">Edit</a>&nbsp;/&nbsp;<a href="">Delete</a></td>
                         </tr>
                     @empty
                         <h3>No data.</h3>

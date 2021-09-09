@@ -19,8 +19,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('news.categories') }}">Worldwide job news</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('news.categories') }}">Worldwide job</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('news.news', mt_rand(6, 12)) }}">Job news</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.categories.index') }}">Admin page</a></li>
                 </ul>
             </div>
@@ -56,12 +56,12 @@
                         <div class="col-sm-2">
                             <ul class="list-unstyled mb-0">
                                 <li><a href="{{ route('news.index') }}">Home</a></li>
-                                <li><a href="{{ route('news.categories') }}">Worldwide job news</a></li>
+                                <li><a href="{{ route('news.categories') }}">Categories</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-2">
                             <ul class="list-unstyled mb-0">
-                                <li><a href="{{ route('news.news', mt_rand(6, 12)) }}">Random job</a></li>
+                                <li><a href="{{ route('news.news', mt_rand(6, 12)) }}">News</a></li>
                                 <li><a href="{{ route('admin.categories.index') }}">Admin page</a></li>
                             </ul>
                         </div>
@@ -77,10 +77,12 @@
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
         </div>
     </footer>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
+
 </body>
 
 </html>

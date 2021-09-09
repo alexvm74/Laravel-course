@@ -30,5 +30,9 @@
             <i class="fas fa-fw fa-list"></i>
             <span>Новости</span></a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('news.index') }}">
+            <span>Home page</span></a>
+    </li>
 
 </ul>
