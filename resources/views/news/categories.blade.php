@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+    @parent Categories
+@endsection
+
 @section('pageName')
     @parent News categories
 @endsection

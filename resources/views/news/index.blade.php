@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+    @parent Home page
+@endsection
+
 @section('pageName')
     @parent Home
 @endsection

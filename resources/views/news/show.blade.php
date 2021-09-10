@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+    @parent Show
+@endsection
+
 @section('pageName')
     @parent Category / News : #ID {{ $id_category }} / {{ $id_news }}
 @endsection
@@ -22,5 +26,10 @@
             </div>
         </div>
     </div>
-
 @endsection
+
+@push('js')
+    <script>
+        alert("For example - Show news:")
+    </script>
+@endpush
