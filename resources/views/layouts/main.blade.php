@@ -21,6 +21,7 @@
                 @yield('content_categories_1')
                 @yield('content_news_1')
                 @yield('content_show_1')
+                @yield('content_odrer_1')  
             </div>
         </div>
     </header><br><br>
@@ -28,14 +29,21 @@
     <!-- Page content-->
     <div class="container">
         <div class="row">
-            <!-- Blog entries-->
-            @yield('content_index_2')
-            @yield('content_categories_2')
-            @yield('content_news_2')
-            @yield('content_show_2')
+            <!-- Main entries-->
+            <div class="col-lg-8">
+                <div class="row">
+                    @yield('content_index_2')
+                    @yield('content_categories_2')
+                    @yield('content_news_2')
+                    @yield('content_show_2')
+                    @yield('content_order_2') 
+                </div>
+            </div>
+            <!-- Sidebar widgets-->
+            <div class="col-lg-4">
+                <x-sidebar></x-sidebar>
+            </div><br><br>
         </div>
-        <!-- Categories widget-->
-        <x-sidebar></x-sidebar>
     </div>
 
     <!-- Footer-->
@@ -51,7 +59,7 @@
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
 
     {{-- For example: @stack('js') --}}
-    @stack('js')
+    {{-- @stack('js') --}}
 
 </body>
 

@@ -12,7 +12,8 @@
     <h1 class="fw-bolder">Hi, users! Welcome!</h1>
 @endsection
 
-{{-- this comment... --}}
+{{-- this blade comment... --}}
+
 
 @section('content_index_2')
     <!-- Side widget-->

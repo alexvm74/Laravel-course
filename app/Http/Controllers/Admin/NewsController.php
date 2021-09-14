@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -26,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.news.create');
     }
 
     /**
@@ -37,7 +38,16 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // for example only:
+        $request->validate([
+            'title' => ['required', 'string', 'min:3']
+        ]);
+        //dd($request->all());
+        dump($request->all());
+        return response('This is Response, Request see above.');
+        //return response()->json($request->all(), 200);
+        //return response()->json($request->all());
+        //return response()->download('robots.txt');
     }
 
     /**

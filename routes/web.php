@@ -44,3 +44,9 @@ Route::get('/categories/{id_category}/news/{id_news}', [NewsController::class, '
     ->where('id_category', '\d+')
     ->where('id_news', '\d+')
     ->name('news.show');
+
+Route::match(['post', 'get'], '/info', [NewsController::class, 'infoRec'])
+    ->name('news.info');
+
+Route::get('/order', [NewsController::class, 'order'])
+    ->name('news.order');
