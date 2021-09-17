@@ -13,14 +13,14 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected function getCategories(): array
+    protected function getCategories()
     {
         $model = new Category();
         return $model->getCategories();
         //return Category::getCategories(); // ругается на отсутствие статики в getCategories()
     }
 
-    protected function getNews(): array
+    protected function getNews()
     {
         $model = new News();
         return $model->getNews();

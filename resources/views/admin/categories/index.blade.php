@@ -26,9 +26,9 @@
                     <tbody>
                         @forelse($categoryList as $category)
                             <tr>
-                                <td>{{ $category['id'] }}</td>
-                                <td><a href="{{ route('admin.news.index') }}">{{ $category['title'] }}</a></td>
-                                <td>{{ $category['created_at'] }}</td>
+                                <td>{{ $category->id }}</td>
+                                <td><a href="{{ route('admin.news.index') }}">{{ $category->title }}</a></td>
+                                <td>{{ $category->created_at }}</td>
                                 <td><a href="">Edit</a>&nbsp;/&nbsp;<a href="">Delete</a></td>
                             </tr>
                         @empty

@@ -16,10 +16,14 @@ class CategoryController extends Controller
     public function index()
     {
         $model = new Category();
-        dd($model->getCategories());
+        // dd($model->getCategoryById(3)); // id=3 for example
+        $categoryList = $model->getCategories();
         
+        // return view('admin.categories.index', [
+        //     'categoryList' => $this->getCategories()
+        // ]);
         return view('admin.categories.index', [
-            'categoryList' => $this->getCategories()
+            'categoryList' => $categoryList
         ]);
     }
 

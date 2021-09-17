@@ -7,8 +7,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link @if (request()->routeIs('news.index')) active @endif" aria-current="page" href="{{ route('news.index') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link @if (request()->routeIs('news.categories')) active @endif" href="{{ route('news.categories') }}">Worldwide job</a></li>
-                <li class="nav-item"><a class="nav-link @if (request()->routeIs('news.news')) active @endif" href="{{ route('news.news', mt_rand(6, 12)) }}">Job news</a></li>
+                <li class="nav-item"><a class="nav-link @if (request()->routeIs('news.categories')) active @endif" href="{{ route('news.categories') }}">Categories</a></li>
+                <li class="nav-item"><a class="nav-link @if (request()->routeIs('news.news')) active @endif" href="{{ route('news.news', mt_rand(6, 12)) }}">News</a></li>
                 <li class="nav-item"><a class="nav-link @if (request()->routeIs('news.order')) active @endif" aria-current="page" href="{{ route('news.order') }}">Order</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('admin.categories.index') }}">Admin page</a></li>
             </ul>

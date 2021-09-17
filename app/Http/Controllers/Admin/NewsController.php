@@ -16,10 +16,14 @@ class NewsController extends Controller
     public function index()
     {
         $model = new News();
-        dd($model->getNews());
+        //dd($model->getNews());
+        $newsList = $model->getNews();
 
+        // return view('admin.news.index', [
+        //     'newsList' => $this->getNews()
+        // ]);
         return view('admin.news.index', [
-            'newsList' => $this->getNews()
+            'newsList' => $newsList
         ]);
     }
 
