@@ -8,11 +8,11 @@
     @parent Order
 @endsection
 
-@section('content_odrer_1')
+@section('header')
     <h1 class="fw-bolder">Order</h1>
 @endsection
 
-@section('content_order_2')
+@section('content')
     <!-- Order form -->
     <div class="col-lg-12">
         <div class="card mb-4">

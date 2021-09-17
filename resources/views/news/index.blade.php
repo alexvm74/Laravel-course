@@ -8,15 +8,13 @@
     @parent Home
 @endsection
 
-@section('content_index_1')
+@section('header')
     <h1 class="fw-bolder">Hi, users! Welcome!</h1>
 @endsection
 
 {{-- this blade comment... --}}
 
-
-@section('content_index_2')
-    <!-- Side widget-->
+@section('content')
     <div class="col-lg-12">
         <div class="card mb-4">
             <div class="card-header">Краткое описание агрегатора новостей по поиску работы - Worldwide job news:</div>

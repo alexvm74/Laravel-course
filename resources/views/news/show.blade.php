@@ -8,11 +8,11 @@
     @parent Category / News : #ID {{ $id_category }} / {{ $id_news }}
 @endsection
 
-@section('content_show_1')
+@section('header')
     <h1 class="fw-bolder">News</h1>
 @endsection
 
-@section('content_show_2')
+@section('content')
     {{-- <div class="col-lg-6 offset-lg-3"> --}}
     <div class="col-lg-12">
         <!-- Blog post-->

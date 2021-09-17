@@ -10,33 +10,26 @@
 </head>
 
 <body>
-    <!-- Responsive navbar-->
+
+    <!-- Navbar-->
     <x-header></x-header>
 
-    <!-- Page header with logo and tagline-->
-    <header class="py-5 bg-light border-bottom mb-4">
+    <!-- Header -->
+    <header class="py-2 bg-light border-bottom mb-4">
         <div class="container">
             <div class="text-center my-3">
-                @yield('content_index_1')
-                @yield('content_categories_1')
-                @yield('content_news_1')
-                @yield('content_show_1')
-                @yield('content_odrer_1')  
+                @yield('header') 
             </div>
         </div>
     </header><br><br>
 
-    <!-- Page content-->
+    <!-- Content-->
     <div class="container">
         <div class="row">
             <!-- Main entries-->
             <div class="col-lg-8">
                 <div class="row">
-                    @yield('content_index_2')
-                    @yield('content_categories_2')
-                    @yield('content_news_2')
-                    @yield('content_show_2')
-                    @yield('content_order_2') 
+                    @yield('content')
                 </div>
             </div>
             <!-- Sidebar widgets-->

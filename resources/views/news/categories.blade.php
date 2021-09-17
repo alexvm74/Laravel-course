@@ -8,11 +8,11 @@
     @parent News categories
 @endsection
 
-@section('content_categories_1')
+@section('header')
     <h1 class="fw-bolder">Worldwide job news</h1>
 @endsection
 
-@section('content_categories_2')
+@section('content')
     @forelse($categoryList as $category)
         <div class="col-lg-6">
             <!-- Blog post-->

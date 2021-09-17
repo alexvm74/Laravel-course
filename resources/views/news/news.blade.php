@@ -4,11 +4,11 @@
     @parent News categoriy : #ID {{ $id_category }}
 @endsection
 
-@section('content_news_1')
+@section('header')
     <h1 class="fw-bolder">Job news</h1>
 @endsection
 
-@section('content_news_2')
+@section('content')
         @forelse($newsList as $news)
             <div class="col-lg-6">
                 <!-- Blog post-->
