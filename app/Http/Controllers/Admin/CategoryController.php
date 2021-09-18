@@ -19,9 +19,6 @@ class CategoryController extends Controller
         // dd($model->getCategoryById(3)); // id=3 for example
         $categoryList = $model->getCategories();
         
-        // return view('admin.categories.index', [
-        //     'categoryList' => $this->getCategories()
-        // ]);
         return view('admin.categories.index', [
             'categoryList' => $categoryList
         ]);
@@ -58,7 +55,8 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    //public function show($id)
+    public function show(Category $category)
     {
         //
     }
@@ -69,9 +67,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    //public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        dd($category);
     }
 
     /**
@@ -81,7 +80,8 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    //public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -92,8 +92,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    //public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        dd($category);
     }
 }

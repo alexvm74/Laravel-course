@@ -17,7 +17,7 @@
 @section('content')
     <div class="col-lg-12">
         <div class="card mb-4">
-            <div class="card-header">Краткое описание агрегатора новостей по поиску работы - Worldwide job news:</div>
+            <div class="card-header">Краткое описание агрегатора новостей</div>
             <div class="card-body">
                 <p>Lorem ipsum nulla ut congue diam morbi eros maecenas risus commodo: mauris nibh elementum integer donec nam, <br>
                     lectus bibendum - nulla. Curabitur metus cursus leo risus ut, non nam odio sapien congue ut rutrum morbi metus et nam amet. <br>

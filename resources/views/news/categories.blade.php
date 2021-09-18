@@ -19,7 +19,7 @@
             <div class="card mb-4">
                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                 <div class="card-body">
-                    <div class="small text-muted">{{ now()->format('d-m-Y H:i') }}</div>
+                    <div class="small text-muted">{{ $category->created_at }}</div>
                     <h2 class="card-title h4">{{ $category->id . '. ' }}<a href="{{ route('news.news', ['id_category' => $category->id]) }}">{!! $category->title !!}</a></h2>
                 </div>
             </div>

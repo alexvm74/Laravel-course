@@ -17,13 +17,13 @@ class Controller extends BaseController
     {
         $model = new Category();
         return $model->getCategories();
-        //return Category::getCategories(); // ругается на отсутствие статики в getCategories()
+        //return Category::getCategories(); // need static getCategories()
     }
 
     protected function getNews()
     {
         $model = new News();
         return $model->getNews();
-        //return News::getNews(); // ругается на отсутствие статики в getNews()
+        //return News::getNews(); // need static getNews()
     }
 }

@@ -19,9 +19,6 @@ class NewsController extends Controller
         //dd($model->getNews());
         $newsList = $model->getNews();
 
-        // return view('admin.news.index', [
-        //     'newsList' => $this->getNews()
-        // ]);
         return view('admin.news.index', [
             'newsList' => $newsList
         ]);
@@ -63,7 +60,8 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    //public function show($id)
+    public function show(News $news)
     {
         //
     }
@@ -74,9 +72,10 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    //public function edit($id)
+    public function edit(News $news)
     {
-        //
+        dd($news);
     }
 
     /**
@@ -86,7 +85,8 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    //public function update(Request $request, $id)
+    public function update(Request $request, News $news)
     {
         //
     }
@@ -97,8 +97,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    //public function destroy($id)
+    public function destroy(News $news)
     {
-        //
+        dd($news);
     }
 }

@@ -20,8 +20,6 @@ class NewsController extends Controller
 
     public function news(int $id_category)
     {
-        //dump($this->getNews());
-        //dd($this->getNews());
         return view('news.news', [
             'id_category' => $id_category,
             'newsList' => $this->getNews()

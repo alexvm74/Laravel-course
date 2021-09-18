@@ -29,14 +29,16 @@
                         @forelse($newsList as $news)
                             <tr>
                                 <td>{{ $news->id }}</td>
-                                <td><a href="{{ route('admin.news.index') }}">{{ $news->title }}</a></td>
-                                <td>{{ $news->description }}</td>
-                                <td>{{ $news->autor }}</td>
+                                <td>{!! $news->title !!}</td>
+                                <td>{!! $news->description !!}</td>
+                                <td>{!! $news->autor !!}</td>
                                 <td>{{ $news->created_at }}</td>
-                                <td><a href="">Edit</a>&nbsp;/&nbsp;<a href="">Delete</a></td>
+                                <td><a href="{{ route('admin.news.edit', ['news' => $news->id]) }}">Edit</a>&nbsp;/&nbsp;
+                                    <a href="{{ route('admin.news.destroy', ['news' => $news->id]) }}">Delete</a>
+                                </td>
                             </tr>
                         @empty
-                            <h3>No data.</h3>
+                            <h3>Нет новостей</h3>
                         @endforelse
                     </tbody>
                 </table>

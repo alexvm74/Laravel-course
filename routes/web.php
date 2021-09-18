@@ -22,14 +22,14 @@ Route::get('/', function () {
 });
 */
 
-//admin
+// Admin:
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('categories', AdminCategoryController::class);
     Route::resource('news', AdminNewsController::class);
 });
 
 
-// news
+// News:
 Route::get('/', [NewsController::class, 'index'])
     ->name('news.index');
 
@@ -44,7 +44,9 @@ Route::get('/categories/{id_category}/news/{id_news}', [NewsController::class, '
     ->where('id_category', '\d+')
     ->where('id_news', '\d+')
     ->name('news.show');
+    
 
+// Form:
 Route::match(['post', 'get'], '/info', [NewsController::class, 'infoRec'])
     ->name('news.info');
 

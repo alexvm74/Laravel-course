@@ -27,12 +27,14 @@
                         @forelse($categoryList as $category)
                             <tr>
                                 <td>{{ $category->id }}</td>
-                                <td><a href="{{ route('admin.news.index') }}">{{ $category->title }}</a></td>
+                                <td><a href="{{ route('admin.news.index') }}">{!! $category->title !!}</a></td>
                                 <td>{{ $category->created_at }}</td>
-                                <td><a href="">Edit</a>&nbsp;/&nbsp;<a href="">Delete</a></td>
+                                <td><a href="{{ route('admin.categories.edit', ['category' => $category->id]) }}">Edit</a>&nbsp;/&nbsp;
+                                    <a href="{{ route('admin.categories.destroy', ['category' => $category->id]) }}">Delete</a>
+                                </td>
                             </tr>
                         @empty
-                            <h3>No data.</h3>
+                            <h3>Нет категорий</h3>
                         @endforelse
                     </tbody>
                 </table>
