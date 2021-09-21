@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-4">
                 <ul class="list-unstyled mb-0">
-                    <li><a href="{{ route('news.index', mt_rand(6, 12)) }}">News</a></li>
+                    <li><a href="{{ route('news.index') }}">News</a></li>
                     <li><a href="{{ route('admin.categories.index') }}">Admin page</a></li>
                 </ul>
             </div>

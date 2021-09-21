@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
@@ -20,21 +21,36 @@ class NewsController extends Controller
         ]);
     }
 
-    public function news(int $id_category)
+    public function categoryShow(int $id)
     {
-        return view('news.index', [
-            'id_category' => $id_category,
-            // 'newsList' => $this->getNews()
-            'newsList' => News::where('category_id', $id_category)->get()
+        return view('categories.show', [
+            'id_category' => $id,      // можно не передавать, т.к. category_id есть в 'newsList'
+            'newsList' => News::where('category_id', $id)->get()
         ]);
     }
 
-    public function show(int $id_category, $id_news)
+    public function news()
+    {
+        // return view('news.index', [ 
+        //     'newsList' => News::all()
+        // ]);
+
+        // $newsList = News::with('category')
+        //     ->paginate(
+        //         config('news.paginate')
+        //     );
+
+        return view('news.index', [
+            // 'newsList' => News::paginate(config('news.paginate'))
+            // 'newsList' => News::query()->paginate(4)
+            'newsList' => News::paginate(4)
+        ]);
+    }
+
+    public function show(int $id)
     {
         return view('news.show', [
-            'id_category' => $id_category,
-            'id_news' => $id_news,
-            'newsList' => News::where('id', $id_news)->get()
+            'newsList' => News::where('id', $id)->get()
         ]);
     }
 

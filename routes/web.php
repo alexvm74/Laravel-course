@@ -36,13 +36,16 @@ Route::get('/', [NewsController::class, 'index'])
 Route::get('/categories', [NewsController::class, 'categories'])
     ->name('categories.index');
 
-Route::get('/categories/{id_category}', [NewsController::class, 'news'])
-    ->where('id_category', '\d+')
+Route::get('/categories/{id}', [NewsController::class, 'categoryShow'])
+    ->where('id', '\d+')
+    ->name('categories.show');
+
+Route::get('/news', [NewsController::class, 'news'])
     ->name('news.index');
 
-Route::get('/categories/{id_category}/news/{id_news}', [NewsController::class, 'show'])
-    ->where('id_category', '\d+')
-    ->where('id_news', '\d+')
+Route::get('/news/{id}', [NewsController::class, 'show'])
+    // ->where('id_category', '\d+')
+    ->where('id', '\d+')
     ->name('news.show');
 
 

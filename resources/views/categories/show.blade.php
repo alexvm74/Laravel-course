@@ -1,12 +1,14 @@
 @extends('layouts.main')
 
 @section('pageName')
-    @parent All News 
+    @parent News category - {{ $id_category }}
 @endsection
 
 @section('header')
-    <h1 class="fw-bolder">All News</h1>
+    <h1 class="fw-bolder">News category</h1>
 @endsection
+
+ {{-- <p>{{ dd($newsList) }}</p> --}}
 
 @section('content')
         @forelse($newsList as $news)
@@ -25,5 +27,4 @@
         @empty
             <h3>No news.</h3>
         @endforelse
-        {!! $newsList->links() !!}
 @endsection

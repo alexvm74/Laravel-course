@@ -20,7 +20,7 @@
                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted">{{ $category->created_at }}</div>
-                    <h2 class="card-title h4">{{ $category->id . '. ' }}<a href="{{ route('news.index', ['id_category' => $category->id]) }}">{!! $category->title !!}</a></h2>
+                    <h2 class="card-title h4">{{ $category->id . '. ' }}<a href="{{ route('categories.show', ['id' => $category->id]) }}">{!! $category->title !!}</a></h2>
                 </div>
             </div>
         </div>

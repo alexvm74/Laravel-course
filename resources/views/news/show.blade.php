@@ -6,7 +6,7 @@
 
 @section('pageName')
     {{-- @parent Category / News : #ID {{ $id_category }} / {{ $id_news }} --}}
-    @parent Category: #ID {{ $newsList[0]->category_id }}, News: #ID {{ $newsList[0]->id }}
+    @parent News - {{ $newsList[0]->id }}, Category - {{ $newsList[0]->category_id }}
 @endsection
 
 @section('header')
