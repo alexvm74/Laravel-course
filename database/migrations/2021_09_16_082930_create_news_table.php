@@ -22,7 +22,7 @@ class CreateNewsTable extends Migration
             $table->string('title', 191); // VARCHAR (191)
             $table->string('image', 255)->nullable();
             $table->text('description')->nullable();
-            $table->string('autor', 191)->nullable();
+            $table->string('author', 191)->nullable();
             $table->timestamps();
         });
     }

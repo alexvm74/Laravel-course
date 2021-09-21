@@ -31,20 +31,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 // News:
 Route::get('/', [NewsController::class, 'index'])
-    ->name('news.index');
+    ->name('index');
 
 Route::get('/categories', [NewsController::class, 'categories'])
-    ->name('news.categories');
+    ->name('categories.index');
 
 Route::get('/categories/{id_category}', [NewsController::class, 'news'])
     ->where('id_category', '\d+')
-    ->name('news.news');
+    ->name('news.index');
 
 Route::get('/categories/{id_category}/news/{id_news}', [NewsController::class, 'show'])
     ->where('id_category', '\d+')
     ->where('id_news', '\d+')
     ->name('news.show');
-    
+
 
 // Form:
 Route::match(['post', 'get'], '/info', [NewsController::class, 'infoRec'])
@@ -52,3 +52,13 @@ Route::match(['post', 'get'], '/info', [NewsController::class, 'infoRec'])
 
 Route::get('/order', [NewsController::class, 'order'])
     ->name('news.order');
+
+
+// Collections:
+/* Route::get('/collections', function () {
+    $collect = collect([1, 3, 6, 7, 2, 8, 9, 3, 23, 68, 11, 6]);
+    //dump($collect->min());
+    dump($collect->shuffle()
+        ->map(fn ($item) => $item + 2)
+        ->toJson());
+}); */

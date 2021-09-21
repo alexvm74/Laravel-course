@@ -31,7 +31,7 @@
             <span>Новости</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('news.index') }}">
+        <a class="nav-link" href="{{ route('index') }}">
             <span>Home page</span></a>
     </li>
 

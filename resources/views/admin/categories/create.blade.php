@@ -11,16 +11,18 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger">{{ $error }}</div>
-                @endforeach
-            @endif
+        <div class="col-md-12">
+            @include('inc.messages')
             <form method="post" action="{{ route('admin.categories.store') }}">
                 @csrf
-                <label for="title">Заголовок категории</label>
-                <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
+                <div class="form-group">
+                    <label for="title">Заголовок</label>
+                    <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
+                </div>
+                <div class="form-group">
+                    <label for="description">Описание</label>
+                    <textarea class="form-control" name="description" id="description">{!! old('description') !!}</textarea>
+                </div>
                 <br>
                 <button type="submit" class="btn btn-success">Сохранить</button>
             </form>

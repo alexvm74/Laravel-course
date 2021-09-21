@@ -3,26 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\News;
 
 class NewsController extends Controller
 {
     public function index()
     {
-        return view('news.index');
+        return view('index');
     }
 
     public function categories()
     {
-        return view('news.categories', [
-            'categoryList' => $this->getCategories()
+        return view('categories.index', [
+            'categoryList' => Category::all()
         ]);
     }
 
     public function news(int $id_category)
     {
-        return view('news.news', [
+        return view('news.index', [
             'id_category' => $id_category,
-            'newsList' => $this->getNews()
+            // 'newsList' => $this->getNews()
+            'newsList' => News::where('category_id', $id_category)->get()
         ]);
     }
 
@@ -31,7 +34,7 @@ class NewsController extends Controller
         return view('news.show', [
             'id_category' => $id_category,
             'id_news' => $id_news,
-            'newsList' => $this->getNews()
+            'newsList' => News::where('id', $id_news)->get()
         ]);
     }
 
@@ -43,7 +46,7 @@ class NewsController extends Controller
             $request->validate([
                 'feedbackUserName' => ['required', 'string', 'min:3']
             ]);
-        }  
+        }
         if ($request->has('orderUserName')) {
             $request->validate([
                 'orderUserName' => ['required', 'string', 'min:3']
@@ -52,6 +55,7 @@ class NewsController extends Controller
 
         //dd($request->all());
         dump($request->all());
+        //file_put_contents('text.txt', 'string');
         return response('This is Response, Request see above.');
         //return response()->json($request->all(), 200);
         //return response()->json($request->all());
@@ -62,5 +66,4 @@ class NewsController extends Controller
     {
         return view('news.order');
     }
-
 }

@@ -26,7 +26,7 @@ class NewsSeed extends Seeder
             $data[] = [
             'category_id' => 1,
               'title' => $faker->sentence(mt_rand(3, 10)),
-              'autor' => $faker->lastName(),
+              'author' => $faker->lastName(),
               'description' => $faker->text(mt_rand(100, 200)),
               'updated_at' => now(),
               'created_at' => now()

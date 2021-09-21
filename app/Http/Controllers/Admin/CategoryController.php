@@ -15,10 +15,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $model = new Category();
-        // dd($model->getCategoryById(3)); // id=3 for example
-        $categoryList = $model->getCategories();
-        
+        // $categoryList = Category::get();
+        // $categoryList = Category::all();
+        $categoryList = Category::withCount('news')->get();
+        // dd($categoryList);
+
         return view('admin.categories.index', [
             'categoryList' => $categoryList
         ]);
@@ -70,7 +71,10 @@ class CategoryController extends Controller
     //public function edit($id)
     public function edit(Category $category)
     {
-        dd($category);
+        //dd($category);
+        return view('admin.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -83,7 +87,25 @@ class CategoryController extends Controller
     //public function update(Request $request, $id)
     public function update(Request $request, Category $category)
     {
-        //
+        // Первый способ - перечисляем все поля (но их может быть много)
+        // $category->title = $request->input('title');
+        // $category->description = $request->input('description');
+
+        // Поэтому, после указания способа обновления полей в модели, можно записать так:
+        // (здесь уже перечисляем не все поля, а только те, которые нужно обнвить)
+        $category = $category->fill(
+            $request->only(['title', 'description'])
+        )->save();
+        
+        if ($category) {
+            return redirect()
+                ->route('admin.categories.index')
+                ->with('success', 'Запись успешно обновлена');
+        }
+
+        return back()
+        ->with('error', 'Запись не обновлена')
+        ->withInput();
     }
 
     /**

@@ -15,15 +15,11 @@ class Controller extends BaseController
 
     protected function getCategories()
     {
-        $model = new Category();
-        return $model->getCategories();
-        //return Category::getCategories(); // need static getCategories()
+        return Category::all();
     }
 
     protected function getNews()
     {
-        $model = new News();
-        return $model->getNews();
-        //return News::getNews(); // need static getNews()
+        return News::all();
     }
 }

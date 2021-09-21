@@ -12,13 +12,15 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
-            <div class="table-responive">
+        <div class="col-md-12">
+            <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>#ID</th>
+                            <th>Кол-во новостей</th>
                             <th>Заголовок</th>
+                            <th>Описание</th>
                             <th>Дата добавления</th>
                             <th>Управление</th>
                         </tr>
@@ -27,7 +29,9 @@
                         @forelse($categoryList as $category)
                             <tr>
                                 <td>{{ $category->id }}</td>
-                                <td><a href="{{ route('admin.news.index') }}">{!! $category->title !!}</a></td>
+                                <td>{{ $category->news_count }}</td>
+                                <td><a href="{{ route('admin.news.show', ['news' => $category->id]) }}">{!! $category->title !!}</a></td>
+                                <td>{!! $category->description !!}</td>
                                 <td>{{ $category->created_at }}</td>
                                 <td><a href="{{ route('admin.categories.edit', ['category' => $category->id]) }}">Edit</a>&nbsp;/&nbsp;
                                     <a href="{{ route('admin.categories.destroy', ['category' => $category->id]) }}">Delete</a>
